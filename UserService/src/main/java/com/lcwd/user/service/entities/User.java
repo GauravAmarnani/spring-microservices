@@ -1,10 +1,9 @@
 package com.lcwd.user.service.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 
 @Getter
@@ -28,4 +27,7 @@ public class User {
 
     @Column(name = "ABOUT")
     private String about;
+
+    @Transient
+    private List<Rating> ratings;
 }

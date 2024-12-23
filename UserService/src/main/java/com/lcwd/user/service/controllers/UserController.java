@@ -22,7 +22,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(user1);
     }
 
-    @GetMapping("/${userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<User> getSingleUser(@PathVariable String userId) {
         User user = userService.getUser(userId);
         return ResponseEntity.ok(user);

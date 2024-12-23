@@ -9,12 +9,12 @@ public interface UserService {
     //User Operations:
 
     //Create:
-    User saveUser(User user);
+    User create(User user);
 
     //Get All Users:
-    List<User> getAllUsers();
+    List<User> getAll();
 
     //Get User by UserId:
-    User getUser(String userId);
+    User get(String userId);
 
 }

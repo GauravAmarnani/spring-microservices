@@ -17,19 +17,19 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
+    public User create(User user) {
         String randomUserId = UUID.randomUUID().toString();
         user.setUserId(randomUserId);
         return userRepository.save(user);
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<User> getAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public User getUser(String userId) {
+    public User get(String userId) {
         return userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with ID = " + userId));
     }

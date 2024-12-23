@@ -18,19 +18,19 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
-        User user1 = userService.saveUser(user);
+        User user1 = userService.create(user);
         return ResponseEntity.status(HttpStatus.CREATED).body(user1);
     }
 
     @GetMapping("/{userId}")
     public ResponseEntity<User> getSingleUser(@PathVariable String userId) {
-        User user = userService.getUser(userId);
+        User user = userService.get(userId);
         return ResponseEntity.ok(user);
     }
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
-        List<User> allUsers = userService.getAllUsers();
+        List<User> allUsers = userService.getAll();
         return ResponseEntity.ok(allUsers);
     }
 }
